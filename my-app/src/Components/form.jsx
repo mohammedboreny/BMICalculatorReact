@@ -20,7 +20,7 @@ export class Form extends Component {
     handleSubmit(e) {
         e.preventDefault();
         const BMI =
-          (this.state.wight / this.state.hight / this.state.hight) * 10000;
+          (this.state.wight / this.state.hight / this.state.hight) * Math.pow(10,4);
     
         this.setState({
             finalResult:

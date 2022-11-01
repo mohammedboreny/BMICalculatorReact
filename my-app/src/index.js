@@ -5,15 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Footer from './Components/footer';
 import Header from './Components/header';
-import Form from './Components/form';
+import Form from './Components/Form';
+
 import Resault from './Components/resault';
+// ReactDOM.render(<Form/>, document.getElementById("root"));
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header/>
-    <Form />
-    <Resault/>
-    <Footer/>
+     <Header/>
+    <Form/>
+     {/* <Resault/> */}
+     <Footer/>
   </React.StrictMode>
 );
 

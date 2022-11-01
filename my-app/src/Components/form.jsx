@@ -24,14 +24,17 @@ export class Form extends Component {
     
         this.setState({
             finalResult:
-                BMI < 18.5 ? "underweight" : BMI < 24.9 && BMI >= 18.5 ? "Normalweight" : BMI < 29.9 && BMI >= 25 ? "Overweight": "Obesity"
+                BMI ===0 ? "enter positive values": BMI< 18.5 ? "underweight" : BMI < 24.9 && BMI >= 18.5 ? "Normalweight" : BMI < 29.9 && BMI >= 25 ? "Overweight": "Obesity"
         });
       }
 
     render() {
         return (
-            <div>
-            <div>
+                <body className="text-center" data-new-gr-c-s-check-loaded="14.1085.0" data-gr-ext-installed="">
+                <main className="form-signin w-100 m-auto">
+                <img class="mb-4" src="" alt="" width="72" height="57"/>
+
+                    <div className="container w-25">
                     <form onSubmit={this.handleSubmit}>
                     <legend>Enter hight:</legend>
                     <input type="text"
@@ -39,16 +42,15 @@ export class Form extends Component {
                         onChange={this.handleHight} />
                     <legend>Enter in wight:</legend>
                     <br />
-                    <input type="text"
+                    <input type="text" className='mb-5'
                         value={this.state.wight}
                             onChange={this.handleWight} />
-                          <input type="submit" value="Submit" />
+                          <input type="submit"  className="w-100 btn btn-lg btn-primary" value="Submit" />
                     </form> 
-
+                    </div>
                     <div className='container'>{ this.state.finalResult?<Resault catch={this.state.finalResult}/> : ""}</div>    
-                </div>
-                </div>
-
+         </main>       
+</body >
         );
     }
 }

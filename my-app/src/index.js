@@ -14,9 +14,9 @@ import Resault from './Components/resault';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     {/* <Header/> */}
-    <Form/>
-     {/* <Footer/> */}
+     <Header/>
+    <Form />
+     <Footer/>
   </React.StrictMode>
 );
 

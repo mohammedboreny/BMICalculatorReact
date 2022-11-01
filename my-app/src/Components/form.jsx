@@ -6,7 +6,7 @@ export class Form extends Component {
         this.handleHight = this.handleHight.bind(this);
         this.handleWight = this.handleWight.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.state = { hight: '', wight: '',sum:'',bmiClass: '', bmi: '' };
+        this.state = { hight: '', wight: '',finalResult:'' };
     }
 
     handleHight(e) {
@@ -15,57 +15,37 @@ export class Form extends Component {
     }
     handleWight(e) {
         this.setState({ wight: e.target.value });
-    }
-         getBmi(bmi) {
-            if(bmi < 18.5) {
-                return "Underweight";
-            }
-            if(bmi >= 18.5 && bmi < 24.9) {
-                return "Normal weight";
-            }
-            if(bmi >= 25 && bmi < 29.9) {
-                return "Overweight";
-            }
-            if(bmi >= 30) {
-                return "Obesity";
-            }
-        }
-    
-        computeBmi(){
-            let bmiValue = ( this.state.userWight / this.state.userHight) / this.state.userHight;
-            this.setState({ bmi : bmiValue });
-            let bmiClass = this.getBmi(bmiValue);
-            this.setState({ bmiClass : bmiClass });
-        }
-    
-    
+        console.log(this.state.wight);
+    }e
     handleSubmit(e) {
         e.preventDefault();
-        let bmiValue = ( parseInt(this.state.userWight) / parseInt(this.state.userHight)) / parseInt(this.state.userHight);
-        this.setState({ bmi: bmiValue });
-        console.log(this.state.bmi);
-        // let bmiClass = this.getBmi(bmiValue);
-        // this.setState({ bmiClass : bmiClass })
-    }
+        const BMI =
+          (this.state.wight / this.state.hight / this.state.hight) * 10000;
+    
+        this.setState({
+            finalResult:
+                BMI < 18.5 ? "underweight" : BMI < 24.9 && BMI >= 18.5 ? "Normalweight" : BMI < 29.9 && BMI >= 25 ? "Overweight": "Obesity"
+        });
+      }
 
     render() {
-        const hight = this.state.hight;
-        const wight = this.state.wight;
         return (
             <div>
             <div>
                     <form onSubmit={this.handleSubmit}>
                     <legend>Enter hight:</legend>
                     <input type="text"
-                        value={hight}
+                        value={this.state.hight}
                         onChange={this.handleHight} />
                     <legend>Enter in wight:</legend>
                     <br />
                     <input type="text"
-                        value={wight}
+                        value={this.state.wight}
                             onChange={this.handleWight} />
                           <input type="submit" value="Submit" />
-                </form>              
+                    </form> 
+
+                    <div className='container'>{ this.state.finalResult?<Resault catch={this.state.finalResult}/> : ""}</div>    
                 </div>
                 </div>
 

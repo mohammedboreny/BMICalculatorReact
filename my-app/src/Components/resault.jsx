@@ -1,6 +1,17 @@
 import React, { Component } from 'react'
-import Form from './Form';
+import Form from './form';
+
+
 export class Resault extends Component {
+
+    constructor() {
+        super(Form);
+        // this.computeBmi = this.computeBmi.bind(this);
+        this.getBmi = this.getBmi.bind(this);
+        this.state = { sum:'' };
+
+        
+    }
 
     computeBmi() {
         let bmiValue = ( this.state.userWight / this.state.userHight) / this.state.userHight;
@@ -30,8 +41,8 @@ export class Resault extends Component {
         <div >
             <div className='container w-50'>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                The result is {this.state.bmi} and its 
-                <a href="#" class="alert-link">{this.state.bmiClass}</a>
+                The result is {this.computeBmi} and its 
+                <a href="#" class="alert-link">{this.getBmi(this.state.bmi)}</a>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label=""></button>
         </div>
             </div>

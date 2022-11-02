@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Footer from './Components/footer';
 import Header from './Components/header';
 import Form from './Components/form.jsx';
-
+import Content from './Components/Content';
 import Resault from './Components/resault';
 // ReactDOM.render(<Form/>, document.getElementById("root"));
 
@@ -15,7 +15,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
      <Header/>
-    <Form />
+    {/* <Form /> */}
+      <Content/>
      <Footer/>
   </React.StrictMode>
 );

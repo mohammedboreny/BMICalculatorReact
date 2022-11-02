@@ -6,10 +6,10 @@ export class Resault extends Component {
     return (
         <div >
             <div className='container w-50'>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div className="alert alert-danger alert-dismissible fade show" role="alert">
                     The result is {this.props.catch}
-                <a href="#" class="alert-link"></a>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label=""></button>
+                <a href="#" className="alert-link"></a>
+      <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label=""></button>
         </div>
             </div>
             </div>

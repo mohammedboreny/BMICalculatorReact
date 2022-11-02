@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaIceCream, FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 const Content = () => {
     const [items, setItems] = useState([
         {

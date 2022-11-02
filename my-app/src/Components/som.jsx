@@ -10,24 +10,28 @@ const Som = (props) => {
         }
 
 
-    ]);
+     ] );
 
     const handleFields = (e) => {
         const newItem = { [e.target.name]: e.target.value };
-         setItems(newItem);
+         
         console.log(newItem);
+         setItems(newItem);
     };
 
     
+    
 
-    function handleSubmit (e) {
-        e.preventDefault();
+    function handleSubmit (event) {
+        event.preventDefault();
+        const hight = event.target.hight.value;
+        const wight = event.target.wight.value;
         let BMI =
-          (e.target.wight.value / e.target.hight.value / e.target.hight.value) * Math.pow(10, 4);
+          (wight / hight /hight) * Math.pow(10, 4);
         console.log(BMI);
 
         const Message= BMI === 0 ? "enter positive values" : BMI < 18.5 ? "underweight" : BMI < 24.9 && BMI >= 18.5 ? "Normalweight" : BMI < 29.9 && BMI >= 25 ? "Overweight" : "Obesity";
-        setItems({ finalResult: Message });
+        setItems({ finalResult : Message });
         console.log(Message);
     };
 

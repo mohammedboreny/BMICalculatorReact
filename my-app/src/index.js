@@ -7,7 +7,9 @@ import Footer from './Components/footer';
 import Header from './Components/header';
 import Form from './Components/form.jsx';
 import Content from './Components/Content';
-import Resault from './Components/resault';
+import Som from './Components/som';
+
+
 // ReactDOM.render(<Form/>, document.getElementById("root"));
 
 
@@ -16,7 +18,8 @@ root.render(
   <React.StrictMode>
      <Header/>
     {/* <Form /> */}
-      <Content/>
+    <Som/>
+      {/* <Content/> */}
      <Footer/>
   </React.StrictMode>
 );

@@ -43,6 +43,7 @@ const Content = () => {
             <main className="container w-50 pt-5 ">
                 {items.length ? (
                     <ul>
+                        
                         {/* array.map iterate over all index and update its values */}
                         {items.map((x) => (
                             <li className="border-3 fs-5 alert-danger" key={x.id}>
